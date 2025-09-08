@@ -20,7 +20,7 @@
             
             {
                 "function": "app.f",
-                "expression": "cron(13 0 ? * * *)"
+                "expression": "cron(0 23 ? * * *)"
             }
             ]
     }
