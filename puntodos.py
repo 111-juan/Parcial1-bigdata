@@ -37,7 +37,7 @@ def lambda_handler(event, context):
             user=DB_USER,
             password=DB_PASS,
             database=DB_NAME,
-            cursorclass=pymysql.cursors.DictCursor
+            cursorclass=pymysql.cursors.Cursor,
         )
 
         inserted = 0  # contador de filas insertadas
