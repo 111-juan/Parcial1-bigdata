@@ -55,8 +55,8 @@ jobs:
           else
             zappa deploy dev
           fi
-    - name: Inject env vars into Zappa settings
-      run: |
+     - name: Inject env vars into Zappa settings
+       run: |
           jq '.dev.environment_variables.DB_HOST="${{ secrets.DB_HOST }}" |
           .dev.environment_variables.DB_USER="${{ secrets.DB_USER }}" |
           .dev.environment_variables.DB_PASS="${{ secrets.DB_PASS }}" |
