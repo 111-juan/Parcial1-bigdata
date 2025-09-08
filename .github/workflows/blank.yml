@@ -56,8 +56,8 @@ jobs:
             zappa deploy dev
           fi
      - name: Setup environment variables
-        uses: aws-actions
-        with:
+       uses: aws-actions
+       with:
           DB_HOST: ${{ secrets.DB_HOST }}
           DB_USER: ${{ secrets.DB_USER }}
           DB_PASS: ${{ secrets.DB_PASS }}
