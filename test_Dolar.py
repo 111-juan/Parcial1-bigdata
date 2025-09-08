@@ -35,4 +35,4 @@ def test_descargar_y_guardar_json(mock_get, mock_s3):
     args, kwargs = mock_s3.put_object.call_args
     assert kwargs["Bucket"] == "dolar-raw-parcial1bigdata"
     assert kwargs["ContentType"] == "application/json"
-    assert json.loads(kwargs["Body"].decode("utf-8").replace("'", '"')) == fake_json
+    assert json.loads(kwargs["Body"])== fake_json
