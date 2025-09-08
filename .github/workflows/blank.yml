@@ -57,11 +57,11 @@ jobs:
           fi
      - name: Inject env vars into Zappa settings
        run: |
-          jq '.dev.environment_variables.DB_HOST="${{ secrets.DB_HOST }}" |
-          .dev.environment_variables.DB_USER="${{ secrets.DB_USER }}" |
-          .dev.environment_variables.DB_PASS="${{ secrets.DB_PASS }}" |
-          .dev.environment_variables.DB_NAME="${{ secrets.DB_NAME }}" |
-          .dev.environment_variables.TABLE_NAME="dolar_trm"' \
+          jq '.punto2.environment_variables.DB_HOST="${{ secrets.DB_HOST }}" |
+          .punto2.environment_variables.DB_USER="${{ secrets.DB_USER }}" |
+          .punto2.environment_variables.DB_PASS="${{ secrets.DB_PASS }}" |
+          .punto2.environment_variables.DB_NAME="${{ secrets.DB_NAME }}" |
+          .punto2.environment_variables.TABLE_NAME="dolar_trm"' \
           zappa_settings.json > zappa_settings_tmp.json
           mv zappa_settings_tmp.json zappa_settings.json
 
