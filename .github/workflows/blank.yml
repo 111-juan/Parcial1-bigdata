@@ -55,13 +55,13 @@ jobs:
           else
             zappa deploy dev
           fi
-     - name: Setup environment variables
-       uses: aws-actions
-       with:
-          DB_HOST: ${{ secrets.DB_HOST }}
-          DB_USER: ${{ secrets.DB_USER }}
-          DB_PASS: ${{ secrets.DB_PASS }}
-          DB_NAME: ${{ secrets.DB_NAME }}
+     - name: Set env vars for Zappa
+       run: |
+          export DB_HOST=${{ secrets.DB_HOST }}
+          export DB_USER=${{ secrets.DB_USER }}
+          export DB_PASS=${{ secrets.DB_PASS }}
+          export DB_NAME=${{ secrets.DB_NAME }}
+
       
      - name: Deploy or update zappa BaseDeDatos
        run: |

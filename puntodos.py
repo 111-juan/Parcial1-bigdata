@@ -13,6 +13,7 @@ def lambda_handler(event, context):
     y lo inserta en MySQL convirtiendo timestamp(ms) a DATETIME.
     """
     try:
+        print("inicio lamdba handler")
         # --- Variables de entorno cargadas en tiempo de ejecución ---
         DB_HOST = os.environ.get("DB_HOST", "localhost")
         DB_USER = os.environ.get("DB_USER", "user")
@@ -30,6 +31,7 @@ def lambda_handler(event, context):
         data = json.loads(file_content)   # lista de listas
 
         # --- Conectar a MySQL ---
+        print("conectando a la basedatos")
         conn = pymysql.connect(
             host=DB_HOST,
             user=DB_USER,
@@ -58,7 +60,7 @@ def lambda_handler(event, context):
         conn.close()
 
         print(f"Archivo {key} insertado en {TABLE_NAME} con {inserted} filas")
-
+    
         return {"status": "ok", "rows_inserted": inserted}
 
     except Exception as e:
