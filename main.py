@@ -83,4 +83,4 @@ def get_trm_rango(rango: RangoFechas):
 
 @app.get("/big")
 def mensaje():
-    return("bigdata")
+    return("hola bigdata")
