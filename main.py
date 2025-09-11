@@ -80,3 +80,7 @@ def get_trm_rango(rango: RangoFechas):
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"DB error: {e}")
+
+@app.get("/big")
+def mensaje():
+    return("bigdata")
